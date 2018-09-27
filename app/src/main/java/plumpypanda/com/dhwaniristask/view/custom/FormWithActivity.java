@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-
 import plumpypanda.com.dhwaniristask.R;
 
 /**
@@ -65,7 +64,7 @@ public abstract class FormWithActivity extends AppCompatActivity {
      * removed
      */
     protected void recreateViews() {
-        ViewGroup containerView = (ViewGroup) this.findViewById(R.id.form_elements_container);
+        ViewGroup containerView =  this.findViewById(R.id.form_elements_container);
         formController.recreateViews(containerView);
     }
 }
