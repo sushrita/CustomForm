@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DhwaniRISTask</string>
+
+    <string-array name="cities_array">
+        <item>Delhi</item>
+        <item>Mumbai</item>
+        <item>Banglore</item>
+        <item>Chennai</item>
+        <item>Hydrabad</item>
+        <item>Kolkata</item>
+    </string-array>
+    <string name="token">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEwIiwidXNlcl9sZXZlbCI6IjIiLCJuY
+        W1lIjoiIiwibW9iaWxlX251bWJlciI6IiIsInBhc3N3b3JkX3Jlc2V0X2F0IjpudWxsLCJ2ZXJzaW9uIjpudWxsLCJzdGF0
+        dXMiOiIxIiwidXBkYXRlZF9hdCI6bnVsbCwiY3JlYXRlZF9hdCI6Ij
+        IwMTctMTItMTEgMTg6MTc6NTkiLCJ1c2VyX2lkIjoiMSIsInNjaG9vbF9pZCI6bnVsbCwiY291bnRyeV9pZCI6I
+        jEiLCJsb2dpbl9pZCI6Nzh9.zdMb7fpWaDjFvizMGuxd1UINc0tLfEk7S6a25WoX4qA </string>
+
+    <string name="validation_error_title">Invalid Input</string>
+    <string name="required_field_error_msg">%s is a required field</string>
+</resources>
