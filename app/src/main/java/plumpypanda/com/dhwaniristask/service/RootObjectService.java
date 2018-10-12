@@ -22,32 +22,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RootObjectService {
 
-  /*  public class AuthInterceptor implements Interceptor {
-
-        @Override
-        public RestResponse intercept(Chain chain)
-                throws IOException {
-            Request request = chain.request();
-
-                request = request.newBuilder()
-                        .addHeader("token","eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEwIiwidXNlcl9sZXZlbCI6IjIiLCJuYW1lIjoiIiwibW9iaWxlX251bWJlciI6IiIsInBhc3N3b3JkX3Jlc2V0X2F0IjpudWxsLCJ2ZXJzaW9uIjpudWxsLCJzdGF0dXMiOiIxIiwidXBkYXRlZF9hdCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMTctMTItMTEgMTg6MTc6NTkiLCJ1c2VyX2lkIjoiMSIsInNjaG9vbF9pZCI6bnVsbCwiY291bnRyeV9pZCI6I jEiLCJsb2dpbl9pZCI6Nzh9.zdMb7fpWaDjFvizMGuxd1UINc0tLfEk7S6a25WoX4qA")
-                        .build();
-
-            RestResponse response = chain.proceed(request);
-            return response;
-        }
-    }*/
-    /**
-     * This method creates a new instance of the API interface.
-     *
-     * @return The API interface
-     */
+ 
 
       TokenInterceptor tokenInterceptor = new TokenInterceptor(new TokenManager() {
         @Override
         public String getToken() {
-            return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEwIiwidXNlcl9sZXZlbCI6IjIiLCJuYW1lIjoiIiwibW9iaWxlX251bWJlciI6IiIsInBhc3N3b3JkX3Jlc2V0X2F0IjpudWxsLCJ2ZXJzaW9uIjpudWxsLCJzdGF0dXMiOiIxIiwidXBkYXRlZF9hdCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMTctMTItMTEgMTg6MTc6NTkiLCJ1c2VyX2lkIjoiMSIsInNjaG9vbF9pZCI6bnVsbCwiY291bnRyeV9pZCI6IjEiLCJsb2dpbl9pZCI6Nzh9.zdMb7fpWaDjFvizMGuxd1UINc0tLfEk7S6a25WoX4qA";
-        }
+            return TOKEN;
 
         @Override
         public boolean hasToken() {
@@ -74,7 +54,7 @@ public class RootObjectService {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://stgdreamafrica.dhwaniris.in/index.php/")
+                .baseUrl(URL)
                 .client(provideOkHttpClient())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
@@ -93,7 +73,7 @@ public class RootObjectService {
 
                 // Set authorization token here
                 Request.Builder requestBuilder = original.newBuilder()
-                        .header("token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEwIiwidXNlcl9sZXZlbCI6IjIiLCJuYW1lIjoiIiwibW9iaWxlX251bWJlciI6IiIsInBhc3N3b3JkX3Jlc2V0X2F0IjpudWxsLCJ2ZXJzaW9uIjpudWxsLCJzdGF0dXMiOiIxIiwidXBkYXRlZF9hdCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMTctMTItMTEgMTg6MTc6NTkiLCJ1c2VyX2lkIjoiMSIsInNjaG9vbF9pZCI6bnVsbCwiY291bnRyeV9pZCI6IjEiLCJsb2dpbl9pZCI6Nzh9.zdMb7fpWaDjFvizMGuxd1UINc0tLfEk7S6a25WoX4qA")
+                        .header("token", "TOKEN")
                         .method(original.method(), original.body());
 
                 Request request = requestBuilder.build();
