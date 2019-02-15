@@ -12,7 +12,7 @@ import retrofit2.http.GET;
 
 public interface RootObjectApi {
 
-    @GET("v1/task/new-task")
+    @GET("/new-task")
     Call<RestResponse> getResults();
 
 }
